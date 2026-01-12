@@ -75,17 +75,6 @@ tuner = ParameterTuner(scheduler, toolbox)
 analysis = tuner.run_parameter_tuning(n_samples=15, n_runs=2)
 ```
 
-## Project Structure
-```
-flight-scheduling-ea/
-├── src/               # Core algorithm
-├── analysis/          # Analysis & tuning tools
-├── notebooks/         # Jupyter notebooks
-├── scripts/           # Command-line scripts
-├── tests/             # Unit tests
-└── docs/              # Documentation
-```
-
 ## Algorithm Overview
 
 - **Representation**: Order-based permutations (departure sequences)
@@ -94,19 +83,6 @@ flight-scheduling-ea/
 - **Mutation**: Insertion (20% rate)
 - **Diversity**: Fitness sharing with Kendall tau distance
 - **Survival**: Generational model with elitism
-
-## Results
-
-10-aircraft problem:
-- **FIFO baseline**: 5287 seconds
-- **EA solution**: ~4971 seconds (6% improvement)
-- **Runtime**: 0.5-1.0 seconds
-
-## Documentation
-
-- [Algorithm Design](docs/algorithm_design.md) - Design decisions and rationale
-- [Parameter Tuning](docs/parameter_tuning.md) - Tuning methodology
-- [References](docs/references.md) - Academic sources
 
 ## Key Parameters
 
@@ -118,18 +94,6 @@ flight-scheduling-ea/
 | generations | 100 | Number of generations |
 | tournament_size | 3 | Tournament selection size |
 
-## License
-
-MIT License
-
-## Citation
-```bibtex
-@software{flight_scheduling_ea,
-  title={Flight Departure Scheduling with Evolutionary Algorithms},
-  author={Your Name},
-  year={2024}
-}
-```
 
 ## References
 
