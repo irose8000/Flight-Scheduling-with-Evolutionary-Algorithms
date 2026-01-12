@@ -21,8 +21,8 @@ Air traffic congestion at bottleneck runways creates costly delays. This project
 
 ### Setup
 ```bash
-git clone https://github.com/yourusername/flight-scheduling-ea.git
-cd flight-scheduling-ea
+git clone https://github.com/yourusername/Flight-Scheduling-with-Evolutionary-Algorithms.git
+cd Flight-Scheduling-with-Evolutionary-Algorithms
 pip install -r requirements.txt
 ```
 
