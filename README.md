@@ -31,49 +31,7 @@ pip install -r requirements.txt
 - matplotlib
 - deap
 
-## Quick Start
-
-### Basic Usage
-```python
-from deap import base, creator, tools
-from src.problem import SingleMachineScheduling
-from src.ea import departure_schedule_ea
-import random
-
-# Setup problem
-scheduler = SingleMachineScheduling(n_jobs=10)
-
-# Setup DEAP (see notebooks/exploration.ipynb for full example)
-# ... register operators ...
-
-# Run EA
-population = toolbox.population(n=20)
-final_pop, logbook = departure_schedule_ea(
-    population, toolbox, ngen=100,
-    cxpb=0.9, mutpb=0.2
-)
-
-# Get best solution
-best = min(final_pop, key=lambda x: x.fitness.values[0])
-print(f"Best fitness: {best.fitness.values[0]}")
-```
-
-### Analysis
-```python
-from analysis.analyzer import EAAnalyzer
-
-analyzer = EAAnalyzer(scheduler, toolbox)
-results = analyzer.run_tests(n_runs=5, verbose=True)
-analyzer.generate_report(run=1, fifo_baseline=5287)
-```
-
-### Parameter Tuning
-```python
-from analysis.tuner import ParameterTuner
-
-tuner = ParameterTuner(scheduler, toolbox)
-analysis = tuner.run_parameter_tuning(n_samples=15, n_runs=2)
-```
+## For a full walkthrough, check out notebooks/flight_departure_scheduling_EA_final_draft.ipynb
 
 ## Algorithm Overview
 
