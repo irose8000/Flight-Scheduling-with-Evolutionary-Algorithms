@@ -42,7 +42,7 @@ def departure_schedule_ea(
     from .operators import calculate_ranked_probabilities
     
     # Setup for evaluation
-    stats = tools.Statistics(key=lambda ind: ind.fitness.values)
+    stats = tools.Statistics(key=lambda ind: ind.fitness.values[0])
     stats.register("avg", lambda x: sum(x) / len(x))
     stats.register("std", lambda x: (sum((xi - sum(x)/len(x))**2 for xi in x) / len(x))**0.5)
     stats.register("min", min)
